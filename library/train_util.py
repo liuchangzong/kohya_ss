@@ -3550,7 +3550,9 @@ def _load_target_model(args: argparse.Namespace, weight_dtype, device="cpu", une
         # Diffusers model is loaded to CPU
         print(f"load Diffusers pretrained models: {name_or_path}")
         try:
-            pipe = StableDiffusionPipeline.from_pretrained(name_or_path, tokenizer=None, safety_checker=None)
+            # pipe = StableDiffusionPipeline.from_pretrained(name_or_path, tokenizer=None, safety_checker=None)
+            pipe = StableDiffusionPipeline.from_pretrained(name_or_path, tokenizer=None, safety_checker=None,cache_dir="path/to/where/")
+            
         except EnvironmentError as ex:
             print(
                 f"model is not found as a file or in Hugging Face, perhaps file name is wrong? / 指定したモデル名のファイル、またはHugging Faceのモデルが見つかりません。ファイル名が誤っているかもしれません: {name_or_path}"
