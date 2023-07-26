@@ -360,7 +360,9 @@ def install(
         global quick_allowed   # pylint: disable=global-statement
         quick_allowed = False
     if reinstall or not installed(package, friendly):
-        pip(f'install --upgrade {package}', ignore=ignore, show_stdout=show_stdout)
+        #pip(f'install --upgrade {package}', ignore=ignore, show_stdout=show_stdout)
+        pip(f'install --upgrade {package} --index-url http://mirrors.aliyun.com/pypi/simple/', ignore=ignore, show_stdout=show_stdout)
+        
 
 
 
