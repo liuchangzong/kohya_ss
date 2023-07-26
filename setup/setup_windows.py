@@ -142,7 +142,7 @@ def install_kohya_ss_torch2():
     #     'torch==2.0.1+cu118 torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118',
     #     'torch torchvision'
     # )
-    setup_common.install_requirements('requirements_windows_torch2.txt', check_no_verify_flag=False)
+    setup_common.install_requirements('requirements_windows_torch2.txt', check_no_verify_flag=False, show_stdout=True)
     # install('https://huggingface.co/r4ziel/xformers_pre_built/resolve/main/triton-2.0.0-cp310-cp310-win_amd64.whl', 'triton', reinstall=reinstall)
     sync_bits_and_bytes_files()
     setup_common.configure_accelerate(run_accelerate=True)
